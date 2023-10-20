@@ -1,0 +1,11 @@
+#cloud-config
+password: password
+chpasswd:
+  expire: False
+  # sudo: ALL=(ALL) NOPASSWD:ALL
+  groups: [adm, audio, cdrom, dialout, floppy, video, plugdev, dip, netdev]
+# package_update: true
+# package_upgrade: true
+snap:
+  commands:
+    - snap install microk8s --classic --channel=1.26/stable
